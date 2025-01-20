@@ -15,6 +15,8 @@ ENV DB_PATH=/app/data/pwa.db
 # Expose the configured port
 EXPOSE ${PORT}
 
-CMD ["run", "--unstable-broadcast-channel", "--allow-env", "--allow-read=/app/data", "--allow-write=/app/data", "--allow-net=:${PORT}", "${SCRIPT_URL}"]
+# Add and make the entrypoint script executable
+COPY entrypoint.sh .
+RUN chmod +x entrypoint.sh
 
-ENTRYPOINT ["deno"]
+CMD ["./entrypoint.sh"]

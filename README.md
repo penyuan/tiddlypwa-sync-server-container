@@ -4,10 +4,10 @@ This repository contains a Docker image for running the TiddlyPWA sync server. I
 
 ## Quick Start
 
-1. Generate your admin password hash and salt:
+1. Generate your admin password hash and salt using Docker (no local Deno installation required):
 
    ```bash
-   deno run https://codeberg.org/valpackett/tiddlypwa/raw/branch/release/server/hash-admin-password.ts
+   docker run --rm denoland/deno:latest run https://codeberg.org/valpackett/tiddlypwa/raw/branch/release/server/hash-admin-password.ts
    ```
 
 2. Run the container with the required environment variables:
