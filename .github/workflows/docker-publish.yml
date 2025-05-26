@@ -1,4 +1,4 @@
-name: Docker Build and Publish
+name: Container image build and publish
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 
 env:
   REGISTRY: docker.io
-  IMAGE_NAME: tiddlypwa-server-sync
+  IMAGE_NAME: tiddlypwa-sync-server
 
 jobs:
   build:
