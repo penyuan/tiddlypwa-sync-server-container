@@ -1,18 +1,20 @@
-# TiddlyPWA Sync Server Docker
+# TiddlyPWA sync server container
 
-This repository contains a Docker image for running the TiddlyPWA sync server. It uses the official Deno runtime and provides a simple way to run the sync server with environment variable configuration.
+This repository contains a `Dockerfile` for creating a container image for running the [TiddlyPWA sync server](https://codeberg.org/valpackett/tiddlypwa). It uses the official Deno runtime and provides a simple way to run the sync server with environment variable configuration.
+
+This repository is forked from the original: https://github.com/tanc/tiddypwa-sync-server-docker
 
 ## Quick Start
 
-1. Generate your admin password hash and salt using Docker (no local Deno installation required):
+1. Generate your admin password hash and salt using Podman (or Docker) (no local Deno installation required):
 
    ```bash
-   docker run --rm denoland/deno:latest run https://codeberg.org/valpackett/tiddlypwa/raw/branch/release/server/hash-admin-password.ts
+   podman run --rm denoland/deno:latest run https://codeberg.org/valpackett/tiddlypwa/raw/branch/release/server/hash-admin-password.ts
    ```
 
 2. Run the container with the required environment variables:
    ```bash
-   docker run -d \
+   podman run -d \
      --name tiddlypwa-sync \
      -p 8000:8000 \
      -v $(pwd)/data:/app/data \
@@ -49,14 +51,14 @@ wiki.example.com {
 ## Building Locally
 
 ```bash
-docker build -t tiddlypwa-sync-server .
+podman build -t tiddlypwa-sync-server .
 ```
 
 ## GitHub Actions
 
 This repository includes GitHub Actions workflows to:
 
-1. Build the Docker image
+1. Build the container image
 2. Push to Docker Hub on new tags and main branch updates
 
 To use the GitHub Actions:
