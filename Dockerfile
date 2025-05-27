@@ -9,7 +9,7 @@ RUN mkdir -p /app/data
 ENV SCRIPT_URL=https://codeberg.org/valpackett/tiddlypwa/raw/branch/release/server/run.ts
 
 # Default environment variables
-ENV PORT=8000
+ENV PORT=18000
 ENV DB_PATH=/app/data/pwa.db
 
 # Expose the configured port

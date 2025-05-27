@@ -34,7 +34,7 @@ The following environment variables **must** be set for the server to function:
 
 ## Optional Environment Variables
 
-- `PORT`: Server port (default: 8000)
+- `PORT`: Server port (default: 18000)
 - `HOST`: Server host (default: 0.0.0.0)
 - `BASEPATH`: Base path when running behind a reverse proxy
 
