@@ -34,7 +34,7 @@ The following environment variables **must** be set for the server to function:
 
 ## Optional Environment Variables
 
-- `PORT`: Server port (default: 18000)
+~~- `PORT`: Server port (default: 8000)~~ (TiddlyPWA seems to be hardcoded to listen on port 8000, see [here](https://codeberg.org/valpackett/tiddlypwa/src/branch/trunk/server/run.ts))
 - `HOST`: Server host (default: 0.0.0.0)
 - `BASEPATH`: Base path when running behind a reverse proxy
 
